@@ -16,7 +16,9 @@ handleEdit = (e) => {
   }
   let edit=localStorage.getItem('data');
   edit=JSON.parse(edit);
+  // localStorage.setItem('UserInput',JSON.stringify(edit));
   this.props.dispatch({ type: 'UPDATE', id: this.props.post.id, data: data })
+  localStorage.setItem('UserInput',JSON.stringify(data));
 }
 render() {
 return (

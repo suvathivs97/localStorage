@@ -12,7 +12,7 @@ class Post extends Component {
       onClick={()=>this.props.dispatch({type:'EDIT_POST',id:this.props.post.id})}>
          Edit</button>
       <button className="delete"
-      onClick={()=>this.props.dispatch({type:'DELETE_POST',id:this.props.post.id})}>
+      onClick={()=>this.props.dispatch({type:'DELETE_POST',id:this.props.post.id},localStorage.removeItem('UserInput'))}>
          Delete</button>
     </div>
     </div>
