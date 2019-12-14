@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 class Post extends Component {
+  handleIt=(e)=>{
+    console.log('edit')
+    
+    this.props.editable(true)
+    // window.location.reload()
+  }
   render() {
   return (
     <div className="post">
@@ -9,7 +15,7 @@ class Post extends Component {
       <p className="post_message">{this.props.post.message}</p>
       <div className="control-buttons">
       <button className="edit"
-      onClick={()=>this.props.dispatch({type:'EDIT_POST',id:this.props.post.id})}>
+      onClick={this.handleIt}>
          Edit</button>
       <button className="delete"
       onClick={()=>this.props.dispatch({type:'DELETE_POST',id:this.props.post.id},localStorage.removeItem('UserInput'))}>

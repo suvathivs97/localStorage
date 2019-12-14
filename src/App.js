@@ -10,8 +10,8 @@ class App extends Component{
       <div className="navbar">
       <h2 className="center">Post It</h2>
       </div>
-      <PostForm/>
-      <AllPost/>
+      <PostForm />
+      <AllPost />
     </div>
   );
 }

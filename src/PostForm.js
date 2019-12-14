@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+  
 
 export class PostForm extends Component {
         handleSubmit =(e)=>  {
+            console.log('fjhdfh')
             e.preventDefault();
             const title=this.getTitle.value
             const message= this.getMessage.value
-            const data={
+            const data=[{
                 id:new Date(),
                 title,
-                message,
-                editing:false
-            }
-            
+                message
+                
+            }]
+            localStorage.setItem('aa',false);
             
             this.props.dispatch({
                 type:'ADD_POST',
@@ -21,6 +22,7 @@ export class PostForm extends Component {
             })
             this.getTitle.value='';
             this.getMessage.value='';
+            // a.push(data);
             localStorage.setItem('UserInput',JSON.stringify(data));
         }
         
